@@ -32,3 +32,6 @@ Stack:
 App Interface -> Kotlin [ Jetbrains IDE ]
 Web Interface -> HTML, CSS, SQLITE
 
+
+<h1>CircuitPython</h1>
+<p>The CURCIUTPY Direectory conttains files needed to run our simulated Gas Pump on an Adafruit ESP32 S3 Feather Reverse.</p>
