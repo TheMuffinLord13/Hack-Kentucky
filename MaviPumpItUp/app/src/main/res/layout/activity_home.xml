@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ActivityHome">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="24dp"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="364dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="39dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </FrameLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/HomeScreenTitleLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pump It Up" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/UserName"
+                    android:layout_width="205dp"
+                    android:layout_height="72dp"
+                    android:text="UserName"
+                    android:textSize="34sp" />
+
+                <TextView
+                    android:id="@+id/UserID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_weight="1"
+                    android:text="UserID"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/HomeScreenAccountButton"
+                    android:layout_width="153dp"
+                    android:layout_height="125dp"
+                    android:layout_weight="1"
+                    android:text="Account & Car" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="16dp">
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/CarName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Car Name" />
+
+                    <TextView
+                        android:id="@+id/GasType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gas Type" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/HomeScreenTransactionsLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transactions"
+                android:textSize="34sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="359dp"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/Receipt4Label"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:text="Receipt ID 4" />
+
+                        <TextView
+                            android:id="@+id/Receipt4Value"
+                            android:layout_width="65dp"
+                            android:layout_height="wrap_content"
+                            android:text="$25.26" />
+
+                        <Button
+                            android:id="@+id/Receipt4Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transaction 4" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/Receipt3Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receipt ID 3" />
+
+                        <TextView
+                            android:id="@+id/Receipt3Value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$95.75" />
+
+                        <Button
+                            android:id="@+id/Receipt3Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transaction 3" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/Receipt2Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receipt ID 2" />
+
+                        <TextView
+                            android:id="@+id/Receipt2Value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$34.89" />
+
+                        <Button
+                            android:id="@+id/Receipt2Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transaction 2" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/Receipt1Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Receipt ID 1" />
+
+                        <TextView
+                            android:id="@+id/Receipt1Value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$18.41" />
+
+                        <Button
+                            android:id="@+id/Receipt1Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transaction 1" />
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="15dp"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
