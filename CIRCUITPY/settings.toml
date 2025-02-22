@@ -1,0 +1,4 @@
+# Comments are supported
+
+CIRCUITPY_WIFI_SSID = "LouFi"
+CIRCUITPY_WIFI_PASSWORD = ""
