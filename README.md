@@ -1,6 +1,6 @@
 Hack Kentucky - 2025
 
-Chey, Rowan, Savon, Tim, Cody
+Chey, Rowan, Tim, Cody
 
 Context:
 
