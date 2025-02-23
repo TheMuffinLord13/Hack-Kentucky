@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
         // LaunchedEffect ensures this runs once when the Composable is first shown
         LaunchedEffect(Unit) {
             delay(1500) // Wait for 1.5 seconds
-            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+            startActivity(Intent(this@MainActivity, ActivityHome::class.java))
             finish() // Finish Splash Activity so user can't go back to it
         }
 
