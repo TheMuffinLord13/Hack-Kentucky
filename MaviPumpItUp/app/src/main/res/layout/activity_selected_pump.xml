@@ -112,7 +112,7 @@
 
                             <TextView
                                 android:id="@+id/SessionStartLabel"
-                                android:layout_width="240dp"
+                                android:layout_width="285dp"
                                 android:layout_height="wrap_content"
                                 android:text="Session Start Time Remaining: "
                                 android:textSize="16sp" />
@@ -137,7 +137,7 @@
 
                                 <TextView
                                     android:id="@+id/TransactionLabel4"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="310dp"
                                     android:layout_height="wrap_content"
                                     android:text="Transaction: 4" />
 
@@ -206,7 +206,7 @@
 
                 <Button
                     android:id="@+id/EnablePump"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="93dp"
                     android:text="Enable Pump P#"
                     android:textSize="24sp" />

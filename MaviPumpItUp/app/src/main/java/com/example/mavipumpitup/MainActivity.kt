@@ -13,6 +13,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.res.painterResource
+import com.example.mavipumpitup.ui.login.LoginActivity
+import com.example.mavipumpitup.ui.login.LoginResult
 import com.example.mavipumpitup.ui.theme.MaviPumpItUpTheme
 import kotlinx.coroutines.delay
 
@@ -32,7 +34,7 @@ class MainActivity : ComponentActivity() {
         // LaunchedEffect ensures this runs once when the Composable is first shown
         LaunchedEffect(Unit) {
             delay(1500) // Wait for 1.5 seconds
-            startActivity(Intent(this@MainActivity, ActivityHome::class.java))
+            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             finish() // Finish Splash Activity so user can't go back to it
         }
 
