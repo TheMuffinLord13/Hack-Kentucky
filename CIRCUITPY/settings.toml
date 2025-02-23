@@ -1,4 +1,14 @@
 # Comments are supported
+CIRCUITPY_WIFI_SSID = "Galaxy A124592"
+CIRCUITPY_WIFI_PASSWORD = "lcarsA12"
 
-CIRCUITPY_WIFI_SSID = "LouFi"
-CIRCUITPY_WIFI_PASSWORD = ""
+#CIRCUITPY_WIFI_SSID = "lvl1"
+#CIRCUITPY_WIFI_PASSWORD = "whatpassword"
+
+
+mqtt_broker ="test.mosquitto.org"
+mqtt_port = "1883"  # unencrytped, use 8883 for TLS encrypted
+#mqtt_broker ="io.adafruit.com"
+#mqtt_port = "28782"  
+mqtt_username = ""
+mqtt_password = ""

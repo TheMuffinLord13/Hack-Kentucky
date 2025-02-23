@@ -8,6 +8,8 @@ import adafruit_ntp
 import displayio
 import terminalio
 import digitalio
+import ssl
+import adafruit_minimqtt.adafruit_minimqtt as MQTT
 from adafruit_bitmap_font import bitmap_font
 from displayio import Bitmap
 from adafruit_display_text import label
@@ -24,9 +26,49 @@ ntp = adafruit_ntp.NTP(pool)
 utc = time.mktime(ntp.datetime)
 starttime = int(time.monotonic())
 
-localoffset = int( 300 * float(os.getenv("LONGITUDE_OFFSET")))
-localname = os.getenv("LONGITUDE_NAME")
-locallong = os.getenv("LONGITUDE_OFFSET")
+my_mqtt_topic_hello = "me/feeds/hello"  # the topic we send on
+my_mqtt_topic_light = "me/feeds/light"  # the topic we receive on (could be the same)
+
+# Set up a MiniMQTT Client
+mqtt_client = MQTT.MQTT(
+    broker=os.getenv("mqtt_broker"),
+    port=int(os.getenv("mqtt_port")),
+    username=os.getenv("mqtt_username"),
+    password=os.getenv("mqtt_password"),
+    socket_pool=socketpool.SocketPool(wifi.radio),
+    ssl_context=ssl.create_default_context(),
+)
+
+# Called when the client is connected successfully to the broker
+def connected(client, userdata, flags, rc):
+    print("Connected to MQTT broker!")
+    
+    client.subscribe( my_mqtt_topic_light) # say I want to listen to this topic
+        
+# Called when the client is disconnected
+def disconnected(client, userdata, rc):
+    print("Disconnected from MQTT broker!")
+
+# Called when a topic the client is subscribed to has a new message
+def message(client, topic, message):
+    print("New message on topic {0}: {1}".format(topic, message))
+    val = 0
+    try: 
+        val = int(message)  # attempt to parse it as a number
+    except ValueError:
+        pass
+    print("setting LED to color:",val)
+    # led.fill(val)  # if we had leds
+    
+# Set the callback methods defined above
+mqtt_client.on_connect = connected
+mqtt_client.on_disconnect = disconnected
+mqtt_client.on_message = message
+
+print("Connecting to MQTT broker...")
+mqtt_client.connect()
+
+last_msg_send_time = 0
 
 ##Display is 240x135
 ##spleen = 4 Lines x 20 Characters at 12x24
@@ -88,4 +130,11 @@ while 0 < 1:
     disptext = line1 + line2 + line3 + line4
     text_area = label.Label(spleen, text = disptext, y = 15)
     display.root_group = text_area
+    #mqtt_client.loop(timeout=1)  # see if any messages to me
+    
+    if time.monotonic() - last_msg_send_time > 3.0:  # send a message every 3 secs
+        last_msg_send_time = time.monotonic()
+        msg = "hi there! time is "+str(time.monotonic())
+        print("sending MQTT msg..", msg)
+        mqtt_client.publish( my_mqtt_topic_hello, msg )
     time.sleep(0.2)
